@@ -4,6 +4,9 @@ Access the Fitbit API from Clojure.
 
 https://wiki.fitbit.com/display/API/Fitbit+API
 
+
+[![Build Status](https://api.travis-ci.org/dworznik/clj-fitbit.png)(https://api.travis-ci.org/dworznik/clj-fitbit.png)
+
 # Example
 
     (require '[oauth.client :as oauth]
