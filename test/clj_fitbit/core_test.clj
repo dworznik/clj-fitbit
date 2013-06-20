@@ -1,8 +1,7 @@
 (ns clj-fitbit.core-test
   (:use clojure.test
         [oauth.client :as oauth]
-        clj-fitbit.core
-        clj-fitbit.auth))
+        clj-fitbit.core))
 
 (def not-nil? (complement nil?))
 

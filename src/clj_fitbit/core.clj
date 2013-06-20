@@ -200,7 +200,8 @@
   [[:get "/user/:user/:resource/date/:base-date/:end-date.json" [:user :resource :base-date :end-date ] []
     {:pre [(validate-resource resource) (validate-date base-date)
            (or (validate-date end-date) (in? [:1d, :7d, :30d, :1w, :1m, :3m, :6m, :1y, :max ] end-date))]}
-    {:end-date #(if (keyword? %) (name %) %)}]]
+    {:end-date #(if (keyword? %) (name %) %) :resource #(if (keyword? %) (str (namespace %) "/" (name %)) %)}
+    ]]
   :body )
 
 (def get-my-time-series (partial get-time-series "-"))

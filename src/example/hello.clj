@@ -1,6 +1,5 @@
 (ns example.hello
   (:use [clj-fitbit.core]
-        [clj-fitbit.auth]
         [oauth.client :as oauth]
         [clj-time.core :as time :only [now minus plus months weeks days]]
         [clj-time.format :as time-fmt :only [unparse formatters]]))

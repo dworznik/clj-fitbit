@@ -1,6 +1,5 @@
 (ns example.hr
     (:use [clj-fitbit.core]
-          [clj-fitbit.auth]
           [oauth.client :as oauth]
           [clj-time.core :as time :only [now minus plus months weeks days]]
           [clj-time.format :as time-fmt :only [unparse formatters]]))
@@ -22,10 +21,8 @@
                     :hmac-sha1 ))
 
     (def oauth-token (get-token consumer "token.yaml"))
-;    (with-oauth consumer (:oauth_token oauth-token) (:oauth_token_secret oauth-token)
-;      (println (str "Hello " (get-in (get-my-user-info) [:user :displayName ]) "!"))
-;        (println (log-heart-rate :normal 55 "2013-06-15"))))
     (with-oauth consumer (:oauth_token oauth-token) (:oauth_token_secret oauth-token)
-      (println (get-my-time-series "activities/tracker/steps" "2013-05-01" "1m"))))
+      (println (str "Hello " (get-in (get-my-user-info) [:user :displayName ]) "!"))
+        (println (log-heart-rate :normal 55 "2013-06-15"))))
 
 
